@@ -1,16 +1,28 @@
-export default function Navbar() {
-  const links = ["Accueil", "Programme", "Mon Planning", "Mon Passeport"];
+import { Link } from "react-router-dom";
 
+export default function Navbar() {
   return (
-    <div className="flex justify-between items-center">
-      <h2 className="text-xl font-bold">MAWAZIN</h2>
+    <div className="flex justify-between items-center bg-black text-white p-4">
+      <h2 className="text-xl font-bold">
+        MAWAZIN
+      </h2>
 
       <div className="flex gap-6 text-sm">
-        {links.map((link) => (
-          <a key={link} href="#" className="hover:text-yellow-400">
-            {link}
-          </a>
-        ))}
+        <Link to="/" className="hover:text-yellow-400">
+          Accueil
+        </Link>
+
+        <Link to="/programme" className="hover:text-yellow-400">
+          Programme
+        </Link>
+
+        <Link to="/planning" className="hover:text-yellow-400">
+          Mon Planning
+        </Link>
+
+        <Link to="/passport" className="hover:text-yellow-400">
+          Mon Passeport
+        </Link>
       </div>
     </div>
   );
